@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AppListaAlunos</string>
+    <string name="txt_title">Lista de Alunos</string>
+    <string name="txt_hint_first_name">Primeiro Nome</string>
+    <string name="txt_hint_last_name">Sobrenome</string>
+    <string name="txt_hint_course_name">Curso</string>
+    <string name="txt_hint_number_cod">Matrícula</string>
+    <string name="btn_reset">Limpar</string>
+    <string name="btn_save">Salvar</string>
+    <string name="btn_finish">Finalizar</string>
 </resources>

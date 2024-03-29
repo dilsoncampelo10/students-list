@@ -11,111 +11,119 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/txt_title"
         android:textSize="20sp"
+
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtFirstName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="@string/txt_hint_first_name"
+
+        android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
     <EditText
-        android:id="@+id/textLastName"
+        android:id="@+id/txtLastName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="34dp"
         android:ems="10"
         android:hint="@string/txt_hint_last_name"
+
+        android:importantForAutofill="no"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtCourseName"
         app:layout_constraintEnd_toEndOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFirstName" />
 
     <EditText
         android:id="@+id/txtCourseName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="46dp"
         android:ems="10"
         android:hint="@string/txt_hint_course_name"
+
+        android:importantForAutofill="no"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/txtNumberCod"
         app:layout_constraintEnd_toEndOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
 
     <EditText
         android:id="@+id/txtNumberCod"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:hint="@string/txt_hint_number_cod"
+        android:importantForAutofill="no"
         android:inputType="number"
+
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="257dp"
-        tools:ignore="MissingConstraints"
-        android:importantForAutofill="no" />
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCourseName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_marginBottom="55dp"
         android:background="@color/buttonColor"
         android:text="@string/btn_reset"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFinish"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNumberCod"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="107dp"
+
+        android:layout_marginBottom="55dp"
         android:background="@color/buttonColor"
         android:text="@string/btn_save"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFinish"
+        app:layout_constraintEnd_toStartOf="@+id/buttonReset"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/txtNumberCod"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumberCod"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonFinish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginBottom="388dp"
         android:background="@color/buttonColor"
         android:text="@string/btn_finish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumberCod" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

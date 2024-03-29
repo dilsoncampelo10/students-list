@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     StudentController controller;
     public static final String PREFERENCE_NAME= "students_list";
     SharedPreferences preferences;
+    SharedPreferences.Editor studentList;
     EditText txtFirstName;
     EditText txtLastName;
     EditText txtCourseName;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new StudentController();
         preferences = getSharedPreferences(PREFERENCE_NAME,0);
-        SharedPreferences.Editor studentList = preferences.edit();
+        studentList = preferences.edit();
 
         Student student = new Student(preferences.getString("firstName",""),preferences.getString("lastName",""),preferences.getString("courseName",""),preferences.getString("numberCod",""));
         txtFirstName = findViewById(R.id.txtFirstName);
@@ -69,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 txtCourseName.setText("");
                 txtNumberCod.setText("");
 
+                studentList.clear();
+                studentList.apply();
                 Log.i("view",v.toString());
             }
         });

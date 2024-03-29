@@ -1,5 +1,6 @@
 package devandroid.dilson.applistaaluno.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,10 +15,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.dilson.applistaaluno.R;
+import devandroid.dilson.applistaaluno.controller.StudentController;
 import devandroid.dilson.applistaaluno.model.Student;
 
 public class MainActivity extends AppCompatActivity {
 
+    StudentController controller;
+    public static final String PREFERENCE_NAME= "students_list";
+    SharedPreferences preferences;
     EditText txtFirstName;
     EditText txtLastName;
     EditText txtCourseName;
@@ -36,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        controller = new StudentController();
+        preferences = getSharedPreferences(PREFERENCE_NAME,0);
+        SharedPreferences.Editor studentList = preferences.edit();
+
         Student student = new Student("Dilson","Campêlo","Java","12211");
         txtFirstName = findViewById(R.id.txtFirstName);
         txtLastName = findViewById(R.id.txtLastName);
@@ -80,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 student.setNumberCod(txtNumberCod.getText().toString());
 
                 Toast.makeText(MainActivity.this,"Salvo: "+ student.toString(),Toast.LENGTH_LONG).show();
+
+                studentList.putString("firstName",student.getFirstName());
+                studentList.putString("lastName",student.getLastName());
+                studentList.putString("courseName",student.getCourseName());
+                studentList.putString("numberCod",student.getNumberCod());
+                studentList.apply();
+                controller.save(student);
             }
         });
 

@@ -21,9 +21,7 @@ import devandroid.dilson.applistaaluno.model.Student;
 public class MainActivity extends AppCompatActivity {
 
     StudentController controller;
-    public static final String PREFERENCE_NAME= "students_list";
-    SharedPreferences preferences;
-    SharedPreferences.Editor studentList;
+
     EditText txtFirstName;
     EditText txtLastName;
     EditText txtCourseName;
@@ -43,11 +41,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        controller = new StudentController();
-        preferences = getSharedPreferences(PREFERENCE_NAME,0);
-        studentList = preferences.edit();
-
-        Student student = new Student(preferences.getString("firstName",""),preferences.getString("lastName",""),preferences.getString("courseName",""),preferences.getString("numberCod",""));
+        controller = new StudentController(MainActivity.this);
+        Student student = new Student();
+        controller.getData(student);
         txtFirstName = findViewById(R.id.txtFirstName);
         txtLastName = findViewById(R.id.txtLastName);
         txtCourseName = findViewById(R.id.txtCourseName);
@@ -70,9 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 txtCourseName.setText("");
                 txtNumberCod.setText("");
 
-                studentList.clear();
-                studentList.apply();
-                Log.i("view",v.toString());
+                controller.clear();
+
             }
         });
 
@@ -94,11 +89,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this,"Salvo: "+ student.toString(),Toast.LENGTH_LONG).show();
 
-                studentList.putString("firstName",student.getFirstName());
-                studentList.putString("lastName",student.getLastName());
-                studentList.putString("courseName",student.getCourseName());
-                studentList.putString("numberCod",student.getNumberCod());
-                studentList.apply();
                 controller.save(student);
             }
         });

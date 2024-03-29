@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         preferences = getSharedPreferences(PREFERENCE_NAME,0);
         SharedPreferences.Editor studentList = preferences.edit();
 
-        Student student = new Student("Dilson","Campêlo","Java","12211");
+        Student student = new Student(preferences.getString("firstName",""),preferences.getString("lastName",""),preferences.getString("courseName",""),preferences.getString("numberCod",""));
         txtFirstName = findViewById(R.id.txtFirstName);
         txtLastName = findViewById(R.id.txtLastName);
         txtCourseName = findViewById(R.id.txtCourseName);

@@ -2,8 +2,10 @@ package devandroid.dilson.applistaaluno.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +50,38 @@ public class MainActivity extends AppCompatActivity {
         txtLastName.setText(student.getLastName());
         txtCourseName.setText(student.getCourseName());
         txtNumberCod.setText(student.getNumberCod());
+
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtFirstName.setText("");
+                txtLastName.setText("");
+                txtCourseName.setText("");
+                txtNumberCod.setText("");
+
+                Log.i("view",v.toString());
+            }
+        });
+
+        buttonFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Volte Sempre",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                student.setFirstName(txtFirstName.getText().toString());
+                student.setLastName(txtLastName.getText().toString());
+                student.setCourseName(txtCourseName.getText().toString());
+                student.setNumberCod(txtNumberCod.getText().toString());
+
+                Toast.makeText(MainActivity.this,"Salvo: "+ student.toString(),Toast.LENGTH_LONG).show();
+            }
+        });
 
         Log.i("Poo","Aqui");
     }

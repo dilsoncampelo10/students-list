@@ -17,6 +17,16 @@ public class Student {
         this.numberCod = numberCod;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", numberCod='" + numberCod + '\'' +
+                '}';
+    }
+
     public String getFirstName() {
         return firstName;
     }

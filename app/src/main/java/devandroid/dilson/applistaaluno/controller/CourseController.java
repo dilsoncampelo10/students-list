@@ -18,4 +18,15 @@ public class CourseController {
 
         return this.courses;
     }
+
+    public List getCoursesName(){
+        ArrayList<String>names = new ArrayList<>();
+        for (int i = 0; i < this.courses.size(); i++) {
+            Course obj = (Course) getCourses().get(i);
+            names.add(obj.getName());
+            
+        }
+
+        return names;
+    }
 }

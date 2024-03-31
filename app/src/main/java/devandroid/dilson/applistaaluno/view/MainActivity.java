@@ -14,14 +14,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 import devandroid.dilson.applistaaluno.R;
+import devandroid.dilson.applistaaluno.controller.CourseController;
 import devandroid.dilson.applistaaluno.controller.StudentController;
+import devandroid.dilson.applistaaluno.model.Course;
 import devandroid.dilson.applistaaluno.model.Student;
 
 public class MainActivity extends AppCompatActivity {
 
     StudentController controller;
-
+    CourseController courseController;
+    List<Course> courseList;
     EditText txtFirstName;
     EditText txtLastName;
     EditText txtCourseName;
@@ -42,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         controller = new StudentController(MainActivity.this);
+        courseController = new CourseController();
+        courseList = courseController.getCourses();
         Student student = new Student();
         controller.getData(student);
         txtFirstName = findViewById(R.id.txtFirstName);

@@ -5,8 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -23,40 +24,37 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="30dp"
                 android:background="@color/buttonColor"
-                android:textColor="@color/white"
-                android:text="@string/txt_title"
-                android:textSize="26sp"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
-                />
+                android:text="@string/txt_title"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/txtFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="@string/txt_hint_first_name"
 
                 android:importantForAutofill="no"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/txtLastName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="@string/txt_hint_last_name"
 
                 android:importantForAutofill="no"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/txtSpinner"
@@ -75,10 +73,8 @@
                 android:layout_width="381dp"
                 android:layout_height="23dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="10dp"
-                />
-
+                android:layout_marginEnd="16dp" />
 
 
             <EditText
@@ -86,22 +82,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="@string/txt_hint_course_name"
 
                 android:importantForAutofill="no"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/txtNumberCod"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="@string/txt_hint_number_cod"
                 android:importantForAutofill="no"
@@ -119,25 +114,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
 
                     android:background="@color/buttonColor"
-                    android:text="@string/btn_reset"
-                    />
+                    android:text="@string/btn_reset" />
 
                 <Button
                     android:id="@+id/buttonSave"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
                     android:background="@color/buttonColor"
                     android:text="@string/btn_save" />
 
             </LinearLayout>
-
 
 
             <Button
@@ -145,11 +138,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/buttonColor"
-                android:text="@string/btn_finish"
-                />
+                android:text="@string/btn_finish" />
 
 
         </LinearLayout>

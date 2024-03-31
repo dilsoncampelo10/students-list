@@ -85,8 +85,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:ems="10"
+                android:enabled="false"
                 android:hint="@string/txt_hint_course_name"
-
                 android:importantForAutofill="no"
                 android:inputType="text" />
 

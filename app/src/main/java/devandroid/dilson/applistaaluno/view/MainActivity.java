@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 student.setFirstName(txtFirstName.getText().toString());
                 student.setLastName(txtLastName.getText().toString());
-                student.setCourseName(txtCourseName.getText().toString());
+                student.setCourseName(spinner.getSelectedItem().toString());
                 student.setNumberCod(txtNumberCod.getText().toString());
 
                 Toast.makeText(MainActivity.this,"Salvo: "+ student.toString(),Toast.LENGTH_LONG).show();

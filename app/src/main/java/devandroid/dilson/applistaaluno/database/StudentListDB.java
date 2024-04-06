@@ -1,5 +1,6 @@
 package devandroid.dilson.applistaaluno.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -40,5 +41,9 @@ public class StudentListDB extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void create(String tableName, ContentValues contentValues){
+        db.insert(tableName,null,contentValues);
     }
 }

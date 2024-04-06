@@ -1,24 +1,39 @@
 package devandroid.dilson.applistaaluno.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 public class StudentListDB extends SQLiteOpenHelper {
     public static final String DB_NAME = "students.list";
     public static final int DB_VERSION = 1;
+    SQLiteDatabase db;
+    Cursor cursor;
     public StudentListDB(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
+
+        db = getWritableDatabase();
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db = getWritableDatabase();
-       String table = "CREATE TABLE students (id INTEGER PRIMARY KEY AUTOINCREMENT, "+
-        "first_name TEXT, last_name TEXT,course TEXT,number_cod, INTEGER)";
-       db.execSQL(table);
+
+
+        String table
+                = "CREATE TABLE students (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "firstName TEXT, " +
+                "lastName TEXT, " +
+                "courseName TEXT, "+
+                "numberCod INTEGER)";
+
+
+        db.execSQL(table);
+
 
     }
 
